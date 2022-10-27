@@ -1,5 +1,5 @@
 def decode(code)
-    charTranslator = {
+  char_Translator = {
       '.-' => 'A', '-...' => 'B', '-.-.' => 'C', '-..' => 'D',
       '.' => 'E', '..-.' => 'F', '--.' => 'G', '....' => 'H',
       '..' => 'I', '.---' => 'J', '-.-' => 'K', '.-..' => 'L',
@@ -8,15 +8,15 @@ def decode(code)
       '..-' => 'U', '...-' => 'V', '.--' => 'W', '-..-' => 'X',
       '-.--' => 'Y', '--..' => 'Z'
     }
-    charTranslator[code]
+  char_Translator[code]
   end
   
-  def decodeWord(decodeWord)
-    decodeWord.split.map { |char| decode(char) }.join
+  def decode_word(decode_word)
+    decode_word.split.map { |char| decode(char) }.join
   end
   
-  def decoder(decodeSentence)
-    decodeSentence.split('   ').map { |word| decodeWord(word) }.join(' ')
+  def decoder(decode_sentence)
+    decode_sentence.split('   ').map { |word| decode_word(word) }.join(' ')
   end
   
   print decoder('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')

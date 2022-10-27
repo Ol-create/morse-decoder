@@ -9,15 +9,15 @@ def decode(code)
       '-.--' => 'Y', '--..' => 'Z'
     }
   char_Translator[code]
-  end
+end
   
-  def decode_word(decode_word)
-    decode_word.split.map { |char| decode(char) }.join
-  end
+def decode_word(decode_word)
+  decode_word.split.map { |char| decode(char) }.join
+end
   
-  def decoder(decode_sentence)
-    decode_sentence.split('   ').map { |word| decode_word(word) }.join(' ')
-  end
+def decoder(decode_sentence)
+  decode_sentence.split('   ').map { |word| decode_word(word) }.join(' ')
+end
   
-  print decoder('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
-  # Prints: "A BOX FULL OF RUBIES"
+print decoder('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
+# Prints: "A BOX FULL OF RUBIES"
